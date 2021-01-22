@@ -6,6 +6,7 @@ __pycache__/
 db.sqlite3
 django.ipynb
 .idea
+news\
 
 # Created by https://www.toptal.com/developers/gitignore/api/pycharm+all
 # Edit at https://www.toptal.com/developers/gitignore?templates=pycharm+all
