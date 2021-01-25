@@ -1,16 +1,5 @@
 import json
-
-from django.shortcuts import render
-
-
-# Create your views here.
-def index(request):
-    context = {'title': 'GeekShop'}
-    return render(request, 'mainapp/index.html', context=context)
-
-
-def products(request):
-    context = {'title': 'GeekShop - Каталог',
+products = {'title': 'GeekShop - Каталог-json',
                'products': [{'title': 'Худи черного цвета с монограммами adidas Originals',
                              'desc': 'Мягкая ткань для свитшотов. Стиль и комфорт – это образ жизни.',
                              'price': '6 090,00', 'img': 'Adidas-hoodie.png'},
@@ -31,19 +20,7 @@ def products(request):
                             {'title': 'Темно-синие широкие строгие брюки ASOS DESIGN',
                              'desc': 'Легкая эластичная ткань сирсакер Фактурная ткань.', 'price': '2 890,00',
                              'img': 'Dark-blue-wide-leg-ASOs-DESIGN-trousers.png'}]}
+prod2={'title':'Темно-синие широкие строгие брюки ASOS DESIGN','desc':'Легкая эластичная ткань сирсакер Фактурная ткань.', 'price':'2 890,00','img':'Dark-blue-wide-leg-ASOs-DESIGN-trousers.png'}
 
-    return render(request, 'mainapp/products.html', context=context)
-
-
-def products_json(requests):
-    with open('mainapp/fixtures/products.json')as f:
-        context = json.load(f)
-    print(context)
-    return render(requests, 'mainapp/products_json.html', context=context)
-
-
-def test_context(requests):
-    context = {'url': {'title': 'заголовок страницы',
-                       'hello': 'Hello world',
-                       'user': 'egor'}}
-    return render(requests, 'mainapp/context.html', context=context)
+with open('mainapp/fixtures/products.json','w') as f:
+    json.dump(products,f)
