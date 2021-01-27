@@ -35,11 +35,11 @@ def products(request):
     return render(request, 'mainapp/products.html', context=context)
 
 
-def products_json(requests):
-    with open('mainapp/fixtures/products.json')as f:
-        context = json.load(f)
-    print(context)
-    return render(requests, 'mainapp/products_json.html', context=context)
+# def products_json(requests):
+#     with open('mainapp/fixtures/products.json')as f:
+#         context = json.load(f)
+#     print(context)
+    # return render(requests, 'mainapp/products_json.html', context=context)
 
 
 def test_context(requests):
