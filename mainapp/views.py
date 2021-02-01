@@ -11,7 +11,6 @@ def index(request):
 
 
 def products(request):
-
     #
     category = PS.objects.all()
     products = P.objects.all()
