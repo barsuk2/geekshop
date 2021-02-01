@@ -9,7 +9,7 @@ def index(request):
     return render(request, 'mainapp/index.html', context=context)
 
 
-def products(request):
+def products(request,prod_id):
     context = {'title': 'GeekShop - Каталог',
                'products': [{'title': 'Худи черного цвета с монограммами adidas Originals',
                              'desc': 'Мягкая ткань для свитшотов. Стиль и комфорт – это образ жизни.',
