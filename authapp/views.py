@@ -18,9 +18,10 @@ def login(request):
                 auth.login(request, user)
                 return HttpResponseRedirect(reverse('index'))
     else:
-        form =UserLoginForm()
-    context = {'form':form}
-    return render(request, 'authapp/login.html',context=context)
+        form = UserLoginForm()
+    context = {'form': form}
+    return render(request, 'authapp/login.html', context=context)
+
 
 def register(request):
     if request.method == 'POST':
@@ -28,10 +29,14 @@ def register(request):
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('auth:login'))
+        else:
+            errors = form.errors.as_data().items()
+            for key, val in errors:
+                print(val)
     else:
         form = UserRegisterForm()
-    context={'form': form}
-    return render(request, 'authapp/register.html',context)
+    context = {'form': form}
+    return render(request, 'authapp/register.html', context)
 
 
 def logout(request):
