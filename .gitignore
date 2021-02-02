@@ -3,14 +3,11 @@
 matrials_for_lesson/
 test/
 __pycache__/
-db.sqlite3
+*.sqlite3
 ../django.ipynb
 .idea
-<<<<<<< HEAD
-news/
-=======
-../Fulldjango/news/
->>>>>>> lesson2
+/fixtures/
+media
 # Created by https://www.toptal.com/developers/gitignore/api/pycharm+all
 # Edit at https://www.toptal.com/developers/gitignore?templates=pycharm+all
 
